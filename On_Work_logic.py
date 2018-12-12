@@ -98,35 +98,35 @@ def check_chotted_battle(battlefield, posi1, posj1, posi2, posj2, player_id):
     return True
 
 def shot(battlefield,posi,posj,player_id):
-    if battlefield[posi][posj][player_id]==0: #пусто
+    if battlefield[posi][posj][player_id]==0: #ГЇГіГ±ГІГ®
         battlefield[posi][posj][player_id]=4
-    elif battlefield[posi][posj][player_id]==1: #нетронутый корабль
+    elif battlefield[posi][posj][player_id]==1: #Г­ГҐГІГ°Г®Г­ГіГІГ»Г© ГЄГ®Г°Г ГЎГ«Гј
         global shotted
         shotted=shotted+1
         if posi!=0:
             if battlefield[posi-1][posj][player_id]==1 or battlefield[posi-1][posj][player_id]==2:
-                battlefield[posi][posj][player_id]=2 #ранен
+                battlefield[posi][posj][player_id]=2 #Г°Г Г­ГҐГ­
                 print('check '+str(posi)+'-'+str(posi-1)+' '+str(posj))
                 check_chotted_battle(battlefield, posi, posj, posi-1, posj, player_id)
                 return True            
         if posi!=9:
             if battlefield[posi+1][posj][player_id]==1 or battlefield[posi+1][posj][player_id]==2:
-                battlefield[posi][posj][player_id]=2 #ранен
+                battlefield[posi][posj][player_id]=2 #Г°Г Г­ГҐГ­
                 print('check '+str(posi)+'-'+str(posi+1)+' '+str(posj))
                 check_chotted_battle(battlefield, posi, posj, posi+1, posj, player_id)
                 return True
         if posj!=0:
             if battlefield[posi][posj-1][player_id]==1 or battlefield[posi][posj-1][player_id]==2:
-                battlefield[posi][posj][player_id]=2 #ранен
+                battlefield[posi][posj][player_id]=2 #Г°Г Г­ГҐГ­
                 print('check '+str(posi)+' '+str(posj)+'-'+str(posj-1))
                 check_chotted_battle(battlefield, posi, posj, posi, posj-1, player_id)
                 return True
         if posj!=9:
             if battlefield[posi][posj+1][player_id]==1 or battlefield[posi][posj+1][player_id]==2:
-                battlefield[posi][posj][player_id]=2 #ранен
+                battlefield[posi][posj][player_id]=2 #Г°Г Г­ГҐГ­
                 print('check '+str(posi)+' '+str(posj)+'-'+str(posj+1))
                 check_chotted_battle(battlefield, posi, posj, posi, posj+1, player_id)
                 return True
-        battlefield[posi][posj][player_id]=3 #убит
+        battlefield[posi][posj][player_id]=3 #ГіГЎГЁГІ
     return True
     
