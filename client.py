@@ -5,6 +5,7 @@ import random
 import msvcrt
 import os
 import numpy as np
+from math import pi
 
 columns = np.array(['A','B','C','D','E','F','G','H','I','J'])
 lines = np.array(['1','2','3','4','5','6','7','8','9','10'])
@@ -137,15 +138,15 @@ def draw_battlefields(mybattlefield, enemybattlefield, posi, posj):
             print(lines[i], end = "   ")
             
         for j in range(10):            
-            if mybattlefield[i][j]==0: #пусто
+            if mybattlefield[i][j]==0: #ГЇГіГ±ГІГ®
                 print('|_|', end = "  ")  
-            elif mybattlefield[i][j]==1: #целый корабль
+            elif mybattlefield[i][j]==1: #Г¶ГҐГ«Г»Г© ГЄГ®Г°Г ГЎГ«Гј
                 print('|X|', end = "  ")
-            elif mybattlefield[i][j]==2: #подбит
+            elif mybattlefield[i][j]==2: #ГЇГ®Г¤ГЎГЁГІ
                 print('|/|', end = "  ")
-            elif mybattlefield[i][j]==3: #убит
+            elif mybattlefield[i][j]==3: #ГіГЎГЁГІ
                 print('|0|', end = "  ")
-            elif mybattlefield[i][j]==4: #промах
+            elif mybattlefield[i][j]==4: #ГЇГ°Г®Г¬Г Гµ
                 print('|.|', end = "  ")
                     
         print("  ", end = "   ")
@@ -158,15 +159,15 @@ def draw_battlefields(mybattlefield, enemybattlefield, posi, posj):
             if i==posi and j==posj:
                 print('|?|', end = "  ")
             else:
-                if enemybattlefield[i][j]==0: #пусто
+                if enemybattlefield[i][j]==0: #ГЇГіГ±ГІГ®
                     print('|_|', end = "  ")  
-                elif enemybattlefield[i][j]==1: #целый корабль
+                elif enemybattlefield[i][j]==1: #Г¶ГҐГ«Г»Г© ГЄГ®Г°Г ГЎГ«Гј
                     print('|X|', end = "  ")
-                elif enemybattlefield[i][j]==2: #подбит
+                elif enemybattlefield[i][j]==2: #ГЇГ®Г¤ГЎГЁГІ
                     print('|/|', end = "  ")
-                elif enemybattlefield[i][j]==3: #убит
+                elif enemybattlefield[i][j]==3: #ГіГЎГЁГІ
                     print('|0|', end = "  ")
-                elif enemybattlefield[i][j]==4: #промах
+                elif enemybattlefield[i][j]==4: #ГЇГ°Г®Г¬Г Гµ
                     print('|.|', end = "  ")                    
         print ('\n')  
     print ('\t\t\tYour Field\t\t\t\t\t\t    Enemys Field')
@@ -194,7 +195,7 @@ def walk_on_battlefield(mybattlefield, enemybattlefield, id):
     os.system('cls')
     draw_battlefields(mybattlefield, enemybattlefield, 0, 0)
 
-    while True:    #написать условие выхода
+    while True:    #Г­Г ГЇГЁГ±Г ГІГј ГіГ±Г«Г®ГўГЁГҐ ГўГ»ГµГ®Г¤Г 
         if msvcrt.kbhit():
             ch = msvcrt.getch()
             if ch == 's':
@@ -247,7 +248,7 @@ def walk_on_battlefield(mybattlefield, enemybattlefield, id):
 if __name__ == "__main__":
     context = zmq.Context()
     #  Socket to talk to server
-    print("Connecting to server…")
+    print("Connecting to serverВ…")
     socket = context.socket(zmq.REQ)
     socket.connect("tcp://46.32.79.43:5000")
     
