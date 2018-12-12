@@ -5,7 +5,6 @@ import random
 import msvcrt
 import os
 import numpy as np
-from math import pi
 
 columns = np.array(['A','B','C','D','E','F','G','H','I','J'])
 lines = np.array(['1','2','3','4','5','6','7','8','9','10'])
